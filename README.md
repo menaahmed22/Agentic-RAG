@@ -25,6 +25,10 @@ Ask any question and provide a PDF. The system attempts to find the answer in th
 
 4-Formatter Agent >> outputs the final answer in Markdown.
 
+## 📎 Example Output
+
+![Streamlit-06-20-2025_05_49_PM](https://github.com/user-attachments/assets/d4f679cb-9f1e-4280-a3ee-13771957a803)
+
 ## 🛠️ Tech Stack
 | Tool               | Purpose                                                   |
 | ------------------ | --------------------------------------------------------- |
