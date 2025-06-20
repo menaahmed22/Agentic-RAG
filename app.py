@@ -147,7 +147,7 @@ Grader_task=Task(
     description=("Based on the response from the retriever task for the quetion {question}"
                  " evaluate whether the retrieved content is relevant to the question."),
     expected_output=(
-            "Binary score 'yes' or 'no' score to indicate whether the answer is relevant to the question"
+            "Binary score  only 'yes' or 'no' score to indicate whether the answer is relevant to the question"
             "You must answer 'yes' if the response from the 'Reterival_task' is in alignment with the question asked."
             "You must answer 'no' if the response from the 'Reterival_task' is not in alignment with the question asked."
             "Do not provide any preamble or explanations except for 'yes' or 'no'."
@@ -172,7 +172,7 @@ Formatter_agent = Agent(
 
 formatter_task = Task(
     description=("Based on the response from the Grader_agent give your final answer  "
-                 "if Grader_agent  final answer is 'yes' Your job is to rephrase Reterival_agnet final answer (quesetion's answer and used tool) for clarity and format it cleanly. "
+                 "if Grader_agent  final answer is 'yes' Your job is to rephrase 'Reterival_agnet' final answer (quesetion's answer and used tool) for clarity and format it cleanly. "
                  "Use bullet points, tables, or summaries depending on the answer content. "
                  "Do not add or remove information, only format and improve clarity."
                  " elseif Grader_agent  final answer is 'no' Your final answer will be 'sorry i can not find answer' "),
@@ -181,7 +181,9 @@ formatter_task = Task(
         "the final answer organized as Markdowns and mandatory mention the used tool form Reterival_agnet "
         ),
     agent=Formatter_agent,
+    context=[Reterival_task],
     llm=Based_llm,
+ 
 )
 import tempfile
 
